@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "a350b661-694d-4a5c-bb12-3bf6d49e355b",
+		"name": "WhatsApp-Messages-Notifications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21267817"
+	},
+	"item": [
+		{
+			"name": "Check for Messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/message/outbox/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"outbox",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send a Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destinationId\" : 5,\r\n    \"originId\" : 1,\r\n    \"messageContent\" : \"Hola como andan!!!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/message/inbox/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"inbox",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
